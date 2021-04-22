@@ -37,5 +37,14 @@ public:
 	//* Description:
 	//************************************
 	int maxProfit(vector<int>& prices);
+	//************************************
+	//* Method:    intersect 寻找数据合集
+	//* FullName:  Solution::intersect
+	//* Parameter: vector<int> & nums1
+	//* Parameter: vector<int> & nums2
+	//* Description:
+	//************************************
+	vector<int> intersect(vector<int>& nums1, vector<int>& nums2);
+
 };
 

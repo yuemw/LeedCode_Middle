@@ -42,12 +42,13 @@ int main()
 	// 	vector<vector<int>> vec{ { 1,1,0}, { 1,1,0}, { 0,0,1}};
 	// 	cout << obj.findCircleNum(vec) << endl;
 
-	vector<int> vec{ 7, 1, 5, 3, 6, 4 };
+	vector<int> vec{ 7, 1, 5, 3, 6, 4, 3 };
 // 	cout << obj.coinChange(vec, 9084) << endl;
 //	obj.removeDuplicates(vec);
 //	bool ret = obj.containsDuplicate(vec);
 	int ret = obj.maxProfit(vec);
 	cout << "max profit is " << ret << endl;
+	obj.intersect(vec, vec);
 
 	system("pause");
 }

@@ -1,5 +1,6 @@
 #include "juniorAlgorithm.h"
-
+#include <map>
+using namespace std;
 
 void Solution::rotate(vector<int>& nums, int k)
 {
@@ -95,4 +96,30 @@ int Solution::maxProfit(vector<int>& prices)
 	}
 
 	return profit;
+}
+
+std::vector<int> Solution::intersect(vector<int>& nums1, vector<int>& nums2)
+{
+	if (nums1.size() > nums2.size())
+	{
+		return intersect(nums2, nums1);
+	}
+
+	std::map<int, int> map;
+	for (int num : nums1)
+	{
+		map[num] += 1;
+	}
+
+	vector<int> retVec;
+	for (int num : nums2)
+	{
+		if (map.find(num) != map.end() && map[num] > 0)
+		{
+			map[num] -= 1;
+			retVec.push_back(num);
+		}
+	}
+
+	return retVec;
 }
