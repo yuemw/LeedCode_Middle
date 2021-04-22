@@ -1,8 +1,7 @@
-#include <iostream>  
-
-#include "code.h"
-
+#include "juniorAlgorithm.h"
+#include <iostream>
 using namespace std;
+
 
 void test()
 {
@@ -31,9 +30,9 @@ void test()
 	}
 
 	cout << count << endl;
-
-	
 }
+
+
 int main()
 {
 	Solution obj;
@@ -43,8 +42,12 @@ int main()
 	// 	vector<vector<int>> vec{ { 1,1,0}, { 1,1,0}, { 0,0,1}};
 	// 	cout << obj.findCircleNum(vec) << endl;
 
-	vector<int> vec{ 431, 62, 88, 428 };
-	cout << obj.coinChange(vec, 9084) << endl;
+	vector<int> vec{ 7, 1, 5, 3, 6, 4 };
+// 	cout << obj.coinChange(vec, 9084) << endl;
+//	obj.removeDuplicates(vec);
+//	bool ret = obj.containsDuplicate(vec);
+	int ret = obj.maxProfit(vec);
+	cout << "max profit is " << ret << endl;
 
 	system("pause");
 }
