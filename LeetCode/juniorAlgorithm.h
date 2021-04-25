@@ -45,6 +45,27 @@ public:
 	//* Description:
 	//************************************
 	vector<int> intersect(vector<int>& nums1, vector<int>& nums2);
-
+	//************************************
+	//* Method:    plusOne 加一
+	//* FullName:  Solution::plusOne
+	//* Parameter: vector<int> & digits
+	//* Description:
+	//************************************
+	vector<int> plusOne(vector<int>& digits);
+	//************************************
+	//* Method:    twoSum 两数之和
+	//* FullName:  Solution::twoSum
+	//* Parameter: vector<int> & nums
+	//* Parameter: int target
+	//* Description:
+	//************************************
+	vector<int> twoSum(vector<int>& nums, int target);
+	//************************************
+	//* Method:    moveZeroes 移动零
+	//* FullName:  Solution::moveZeroes
+	//* Parameter: vector<int> & nums
+	//* Description:
+	//************************************
+	void moveZeroes(vector<int>& nums);
 };
 

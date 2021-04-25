@@ -46,33 +46,16 @@ int Solution::removeDuplicates(vector<int>& nums)
 	return nums.size();
 }
 
+#include <set>
 bool Solution::containsDuplicate(vector<int>& nums)
 {
-	if (nums.size() <= 1)
+	std::set<int> tmpSet;
+	for (int i = 0; i < nums.size(); ++i)
 	{
-		return false;
-	}
-	if (nums[0] == nums[1])
-	{
-		return true;
+		tmpSet.insert(nums[i]);
 	}
 
-	bool bFind = false;
-	for (int i = 0; i < nums.size() - 1; ++i)
-	{
-		int j = i + 1;
-		int ret = nums[i];
-		for (; j < nums.size(); ++j)
-		{
-			ret = ret ^ nums[j];
-			if (nums[i] == ret)
-			{
-				return true;
-			}
-		}
-	}
-
-	return false;
+	return tmpSet.size() != nums.size();
 }
 
 int Solution::maxProfit(vector<int>& prices)
@@ -122,4 +105,70 @@ std::vector<int> Solution::intersect(vector<int>& nums1, vector<int>& nums2)
 	}
 
 	return retVec;
+}
+
+std::vector<int> Solution::plusOne(vector<int>& digits)
+{
+	for (int i = digits.size() - 1; i >= 0; i--) {
+		if (digits[i] != 9) 
+		{
+			digits[i]++;
+			return digits;
+		}
+		else 
+		{
+			digits[i] = 0;
+		}
+	}
+	vector<int> retVec(digits.size() + 1, 0);
+	retVec[0] = 1;
+
+	return retVec;
+}
+
+#include <algorithm>
+std::vector<int> Solution::twoSum(vector<int>& nums, int target)
+{
+	int size = nums.size();
+	vector<int> retVec;
+	for (int i = 0; i < size - 1 ; ++i)
+	{
+		int temp = target - nums[i];
+		if (temp <= 0)
+		{
+			break;
+		}
+		for (int j = i + 1; j < size; ++j)
+		{
+			if (nums[j] == temp)
+			{
+				retVec.push_back(i);
+				retVec.push_back(j);
+				return retVec;
+			}
+		}
+	}
+
+	return retVec;
+}
+
+void Solution::moveZeroes(vector<int>& nums)
+{
+	if (nums.size() <= 1)
+	{
+		return;
+	}
+
+	int index = 0;
+	for (int i = 0; i < nums.size(); ++i)
+	{
+		if (0 != nums[i])
+		{
+			nums[index++] = nums[i];
+		}
+	}
+
+	memset(nums.data() + index , 0, (nums.size() - index) * sizeof(int));
+
+	int i = 0;
 }
