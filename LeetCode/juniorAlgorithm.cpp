@@ -172,3 +172,64 @@ void Solution::moveZeroes(vector<int>& nums)
 
 	int i = 0;
 }
+#include <iostream>
+bool Solution::isValidSudoku(vector<vector<char>>& board)  
+{
+	int row[9][9] = { 0 };
+	int column[9][9] = { 0 };
+	int cell[9][9] = { 0 };
+	for (int i = 0; i < 9; i++)
+	{
+		for (int j = 0; j < 9; j++)
+		{
+			if ('.' == board[i][j])
+			{
+				continue;
+			}
+
+			int temp = board[i][j] - '0' - 1;
+			int box_index = i / 3 * 3 + j / 3;
+			if (row[i][temp] == 1 || column[j][temp] == 1 || cell[box_index][temp] == 1) 
+			{ 
+				return false;
+			}
+
+			++row[i][temp];
+			++column[j][temp];
+			++cell[box_index][temp];
+		}
+
+	}
+
+	return true;
+}
+
+
+void Solution::rotate(vector<vector<int>>& matrix)
+{
+	int length = matrix.size();
+	if (length <= 1)
+	{
+		return;
+	}
+
+	vector<int> tmpVec;
+	for (int i = 0; i < length / 2; ++i)
+	{
+		tmpVec = matrix[i];
+		matrix[i] = matrix[length - i - 1];
+		matrix[length - i - 1] = tmpVec;
+	}
+
+	for (int i = 0; i < length; ++i)
+	{
+		int tmp = 0;
+		for (int j = i + 1; j < length; ++j)
+		{
+			tmp = matrix[i][j];
+			matrix[i][j] = matrix[j][i];
+			matrix[j][i] = tmp;
+		}
+	}
+}
+

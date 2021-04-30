@@ -67,5 +67,19 @@ public:
 	//* Description:
 	//************************************
 	void moveZeroes(vector<int>& nums);
+	//************************************
+	//* Method:    isValidSudoku 有效的数独
+	//* FullName:  Solution::isValidSudoku
+	//* Parameter: vector<vector<char>> & board
+	//* Description:
+	//************************************
+	bool isValidSudoku(vector<vector<char>>& board);
+	//************************************
+	//* Method:    rotate 翻转图像
+	//* FullName:  Solution::rotate
+	//* Parameter: vector<vector<int>> & matrix
+	//* Description:
+	//************************************
+	void rotate(vector<vector<int>>& matrix);
 };
 

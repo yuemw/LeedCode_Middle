@@ -42,13 +42,19 @@ int main()
 	// 	vector<vector<int>> vec{ { 1,1,0}, { 1,1,0}, { 0,0,1}};
 	// 	cout << obj.findCircleNum(vec) << endl;
 
-	vector<int> vec{ 0, 1, 0, 3, 12};
+	vector<int> vec = {0, 1, 0  };
 // 	cout << obj.coinChange(vec, 9084) << endl;
 //	obj.removeDuplicates(vec);
 //	bool ret = obj.containsDuplicate(vec);
 //	int ret = obj.maxProfit(vec);
 //	obj.plusOne(vec);
-	obj.moveZeroes(vec);
+//	obj.moveZeroes(vec);
+
+	vector<vector<int>> matrix = { { 1, 2, 3 }, { 4, 5, 6 }, { 7, 8, 9 } };
+
+	obj.rotate(matrix);
+	cout << "ok" << endl;
+
 
 	system("pause");
 }
